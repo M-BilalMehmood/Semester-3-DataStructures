@@ -1,0 +1,22 @@
+﻿  i222452_Problem01.cpp
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(9,13): error C3646: 'Ob': unknown override specifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(9,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(15,14): error C2061: syntax error: identifier 'Patient'
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(15,5): error C2535: 'Hospital::Hospital(void)': member function already defined or declared
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(14,5): message : see declaration of 'Hospital::Hospital'
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(16,9): error C2065: 'Ob': undeclared identifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(16,14): error C2065: 'ob': undeclared identifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(17,29): error C2065: 'meditationCharges': undeclared identifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(18,21): error C2065: 'dailyRate': undeclared identifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(19,27): error C2065: 'hospitalCharges': undeclared identifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(31,13): error C2065: 'Ob': undeclared identifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(32,21): error C2065: 'Ob': undeclared identifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(34,18): error C2065: 'Ob': undeclared identifier
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\22i-2452_SE-B_Patient.h(30,16): error C2011: 'Hospital': 'class' type redefinition
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_SE-B_Hospital.h(7,7): message : see declaration of 'Hospital'
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_Problem01.cpp(29,18): error C2079: 'h' uses undefined class 'Hospital'
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_Problem01.cpp(29,19): error C2440: 'initializing': cannot convert from 'initializer list' to 'int'
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_Problem01.cpp(29,19): message : The initializer contains too many elements
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_Problem01.cpp(43,18): error C2079: 'h' uses undefined class 'Hospital'
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_Problem01.cpp(43,19): error C2440: 'initializing': cannot convert from 'initializer list' to 'int'
+D:\Semester 3\DS Lab\i222452_SE-B_Lab_01\i222452_SE-B_Lab_01\i222452_Problem01.cpp(43,19): message : The initializer contains too many elements

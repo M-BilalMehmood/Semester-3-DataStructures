@@ -1,0 +1,5 @@
+﻿  i222452_SE-B_Lab_02_Main.cpp
+D:\Semester 3\DS Lab\22I-2452_SE-B_LAB_02\22I-2452_SE-B_LAB_02\I222452_SE-B_LAB_02_Header4.h(10,4): error C3646: 'type1': unknown override specifier
+D:\Semester 3\DS Lab\22I-2452_SE-B_LAB_02\22I-2452_SE-B_LAB_02\I222452_SE-B_LAB_02_Header4.h(14,2): message : see reference to class template instantiation 'Box<T1,T2,T3>' being compiled
+D:\Semester 3\DS Lab\22I-2452_SE-B_LAB_02\22I-2452_SE-B_LAB_02\I222452_SE-B_LAB_02_Header4.h(10,9): error C2059: syntax error: '('
+D:\Semester 3\DS Lab\22I-2452_SE-B_LAB_02\22I-2452_SE-B_LAB_02\I222452_SE-B_LAB_02_Header4.h(11,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
