@@ -5,7 +5,7 @@ struct Node {
     Node* left;
     Node* right;
 };
-// this is the change
+
 Node* newNode(int data) {
     Node* node = new Node();
     node->data = data;
