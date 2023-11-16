@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-class Node
+class Node //Node class with a new member height
 {
 public:
     int data;
@@ -159,7 +159,7 @@ private:
         cout << indent << node->data << "\n";
         printTree(node->left, indent + "   ");
     }
-public:
+public://getters and setters to access the private functions
     Tree() : root(0) {};
     void insert(int val)
     {
