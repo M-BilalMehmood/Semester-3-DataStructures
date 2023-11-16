@@ -5,8 +5,9 @@ class Node
 {
 public:
     int data;
+    int height;
     Node *left, *right;
-    Node() : data(0), left(nullptr), right(nullptr) {};
+    Node() : data(0), height(0), left(nullptr), right(nullptr) {};
     Node(int val) : data(val), left(nullptr), right(nullptr) {};
 };
 
@@ -28,6 +29,7 @@ private:
         {
             node->left = insertBST(node->left, val);
         }
+        updateHeight(node);
     }
     Node* deleteBST(Node* node, int key)
     {
@@ -58,7 +60,10 @@ private:
                 return temp;
             }
             Node* temp = minValueNode(node->right);
+            node->data = temp->data;
+            node->right = deleteBST(node->right, temp->data);
         }
+        updateHeight(node);
     }
     Node* minValueNode(Node* node)
     {
@@ -68,5 +73,27 @@ private:
             current = current->left;
         }
         return current;
+    }
+
+    int updateHeight(Node* node)
+    {
+        if(node == nullptr)
+        {
+            return 0;
+        }
+        int leftHeight = (node->left != nullptr)? updateHeight(node->left) : 0;
+        int rightHeight = (node->right != nullptr)? updateHeight(node->right) : 0;
+        return max(leftHeight, rightHeight) + 1;
+    }
+    
+public:
+    Tree() : root(0) {};
+    void insert(int val)
+    {
+        root = insertBST(root, val);
+    }
+    void deleting(int val)
+    {
+        root = deleteBST(root, val);
     }
 };
