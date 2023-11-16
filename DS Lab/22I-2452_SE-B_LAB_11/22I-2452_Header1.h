@@ -34,30 +34,30 @@ private:
     }
     Node* deleteBST(Node* node, int key)
     {
-        if(node == nullptr)
-        {
-            return node;
+        if (node == NULL) 
+        { 
+            return node; 
         }
-        if (key < node->data)
-        {
-            node->left = deleteBST(node->left, key);
+        if (key < node->data) 
+        { 
+            node->left = deleteBST(node->left, key); 
         }
-        else if (key > node->data)
-        {
-            node->right = deleteBST(node->right, key);
+        else if (key > node->data) 
+        { 
+            node->right = deleteBST(node->right, key); 
         }
         else
         {
-            if(node->left = nullptr)
+            if (node->left == NULL)
             {
-                Node* temp = root->right;
-                delete root;
+                Node* temp = node->right;
+                delete node;
                 return temp;
             }
-            if (node->right == nullptr)
+            else if (node->right == NULL)
             {
-                Node* temp = root->left;
-                delete root;
+                Node* temp = node->left;
+                delete node;
                 return temp;
             }
             Node* temp = minValueNode(node->right);
@@ -156,7 +156,7 @@ private:
             return;
         }
         printTree(node->right, indent + "   ");
-        cout << indent << node->data << "\n";
+        cout << "\033[32m" << indent << node->data << "\n\033[0m";
         printTree(node->left, indent + "   ");
     }
 public://getters and setters to access the private functions
