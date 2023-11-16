@@ -9,6 +9,7 @@ public:
     Node *left, *right;
     Node() : data(0), height(0), left(nullptr), right(nullptr) {};
     Node(int val) : data(val), left(nullptr), right(nullptr) {};
+    int setHeight(int h) { height = h; }
 };
 
 class Tree
@@ -17,19 +18,19 @@ private:
     Node* root;
     Node* insertBST(Node* node, int val)
     {
-        if(node == nullptr)
+        if (node == NULL)
         {
-            return new Node(val);
-        }
-        if (val > node->data)
-        {
-            node->right = insertBST(node->right, val);
+            node = new Node(val);
         }
         if (val < node->data)
         {
             node->left = insertBST(node->left, val);
         }
-        updateHeight(node);
+        else if (val > node->data)
+        {
+            node->right = insertBST(node->right, val);
+        }
+        return balance(node);
     }
     Node* deleteBST(Node* node, int key)
     {
@@ -63,7 +64,7 @@ private:
             node->data = temp->data;
             node->right = deleteBST(node->right, temp->data);
         }
-        updateHeight(node);
+        return balance(node);
     }
     Node* minValueNode(Node* node)
     {
@@ -74,7 +75,6 @@ private:
         }
         return current;
     }
-
     int updateHeight(Node* node)
     {
         if(node == nullptr)
@@ -85,15 +85,93 @@ private:
         int rightHeight = (node->right != nullptr)? updateHeight(node->right) : 0;
         return max(leftHeight, rightHeight) + 1;
     }
-    
+    Node* LL(Node* node) 
+    {
+        Node* newRoot = node->left;
+        node->left = newRoot->right;
+        newRoot->right = node;
+        node->height = updateHeight(node);
+        newRoot->height = updateHeight(newRoot);
+        return newRoot;
+    }
+    Node* RR(Node* node) 
+    {
+        Node* newRoot = node->right;
+        node->right = newRoot->left;
+        newRoot->left = node;
+        node->height = updateHeight(node);
+        newRoot->height = updateHeight(newRoot);
+        return newRoot;
+    }
+    Node* LR(Node* node) 
+    {
+        node->left = RR(node->left);
+        return LL(node);
+    }
+    Node* RL(Node* node) 
+    {
+        node->right = LL(node->right);
+        return RR(node);
+    }
+    int getBalanceFactor(Node* node) 
+    {
+        if (node == nullptr) 
+        {
+            return 0;
+        }
+        return (updateHeight(node->left) - 1) - (updateHeight(node->right) - 1);
+    }
+    Node* balance(Node* node) 
+    {
+        int balanceFactor = getBalanceFactor(node);
+        if (balanceFactor > 1) 
+        {
+            if (getBalanceFactor(node->left) >= 0) 
+            {
+                return LL(node);
+            } 
+            else 
+            {
+                return LR(node);
+            }
+        } 
+        else if (balanceFactor < -1) 
+        {
+            if (getBalanceFactor(node->right) <= 0) 
+            {
+                return RR(node);
+            } 
+            else 
+            {
+                return RL(node);
+            }
+        }
+        node->height = updateHeight(node);
+        return node;
+    }
+    void printTree(Node* node, string indent = "") 
+    {
+        if (node == nullptr)
+        {
+            return;
+        }
+        printTree(node->right, indent + "   ");
+        cout << indent << node->data << "\n";
+        printTree(node->left, indent + "   ");
+    }
 public:
     Tree() : root(0) {};
     void insert(int val)
     {
         root = insertBST(root, val);
+        balance(root);
     }
     void deleting(int val)
     {
         root = deleteBST(root, val);
+    }
+    void print()
+    {
+        printTree(root);
     }
 };
