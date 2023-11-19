@@ -1,0 +1,9 @@
+P1 /PatientsData
+P2 /PatientsData
+21.txt /PatientsData/P1/P2
+11.txt /PatientsData/P1
+L1 /Logs
+L2 /Logs
+L3 /Logs
+33.txt /Logs/L1/L2/L3
+22.pdf /Logs
