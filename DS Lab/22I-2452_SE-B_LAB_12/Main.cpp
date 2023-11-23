@@ -4,10 +4,7 @@ using namespace std;
 
 int main()
 {
-    // AVLTree t;
-    // t.print();
     AVLTree t;
-    t.loadDictionary("dictionary.txt");
     string filename, prefix, word;
     int choice;
 
@@ -22,11 +19,13 @@ int main()
         cout << "Enter your choice: ";
         cin >> choice;
 
-        switch (choice) {
+        switch (choice) 
+        {
             case 1:
                 cout << "Enter filename: ";
                 cin >> filename;
                 t.loadDictionary(filename);
+                cout << "\e[32mFile Loaded Successfully\e[0m" << endl;
                 break;
             case 2:
                 cout << "Enter prefix: ";
@@ -46,7 +45,7 @@ int main()
             case 5:
                 exit(0);
             default:
-                cout << "Invalid choice. Please try again.\n";
+                cout << "\e[0;31mInvalid choice\e[0m" << endl;
         }
     }
 

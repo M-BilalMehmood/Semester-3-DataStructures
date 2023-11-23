@@ -110,7 +110,7 @@ class AVLTree
             {
                 if(root->word.find(prefix) == 0)
                 {
-                    cout << root->word << " (Occurence: " << root->count << ")" << endl;
+                    cout << "\e[0;32m" << root->word << " \e[0;35m(Occurence: " << root->count << ")\e[0m" << endl;
                 }
                 preOrder(root->left, prefix);
                 preOrder(root->right, prefix);
@@ -191,7 +191,7 @@ class AVLTree
         }
 
     public:
-        AVLTree() : root(nullptr) {}
+        AVLTree() : root(nullptr) {};
 
         void insert(string word) 
         {
@@ -220,9 +220,10 @@ class AVLTree
 
         Node* print(Node* root) 
         {
-            if(root != NULL) {
+            if(root != NULL) 
+            {
                 print(root->left);
-                cout << root->word << " " << root->count << endl;
+                cout << "\e[0;32m" << root->word << " \e[0;35m(Occurence: " << root->count << ")\e[0m" << endl;
                 print(root->right);
             }
             return root;
