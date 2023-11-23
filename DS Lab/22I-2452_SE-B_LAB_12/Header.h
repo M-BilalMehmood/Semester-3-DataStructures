@@ -3,7 +3,8 @@
 #include<string>
 using namespace std;
 
-struct Node {
+struct Node 
+{
     string word;
     int count;
     int height;
@@ -11,7 +12,8 @@ struct Node {
     Node* right;
 };
 
-class AVLTree {
+class AVLTree 
+{
     private:
         Node* root;
 
@@ -67,19 +69,28 @@ class AVLTree {
             if (node == NULL)
                 return(newNode(word));
             if (word < node->word)
+            {
                 node->left = insert(node->left, word);
+            }
             else if (word > node->word)
+            {
                 node->right = insert(node->right, word);
-            else {
+            }
+            else 
+            {
                 node->count++;
                 return node;
             }
             node->height = 1 + max(height(node->left), height(node->right));
             int balance = getBalance(node);
             if (balance > 1 && word < node->left->word)
+            {
                 return rightRotate(node);
+            }
             if (balance < -1 && word > node->right->word)
+            {
                 return leftRotate(node);
+            }
             if (balance > 1 && word > node->left->word) 
             {
                 node->left = leftRotate(node->left);
@@ -98,7 +109,9 @@ class AVLTree {
             if(root != NULL) 
             {
                 if(root->word.find(prefix) == 0)
-                    cout << root->word << " (" << root->count << endl;
+                {
+                    cout << root->word << " (Occurence: " << root->count << ")" << endl;
+                }
                 preOrder(root->left, prefix);
                 preOrder(root->right, prefix);
             }
@@ -106,10 +119,12 @@ class AVLTree {
 
         Node* minValueNode(Node* node) 
         {
-        Node* current = node;
-        while (current->left != NULL)
-            current = current->left;
-        return current;
+            Node* current = node;
+            while (current->left != NULL)
+            {
+                current = current->left;
+            }
+            return current;
         }
 
         Node* deleteNode(Node* root, string word) 
@@ -213,8 +228,8 @@ class AVLTree {
             return root;
         }
 
-
-        void print() {
+        void print() 
+        {
             print(root);
         }
 };
