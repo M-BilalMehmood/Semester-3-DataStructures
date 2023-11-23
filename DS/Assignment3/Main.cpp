@@ -78,7 +78,7 @@ int main()
         }
         //copy file
         else if (command == "copy")
-        {
+        { 
             ss >> source;
             ss >> destination;
             tree.copyFile(source, destination);

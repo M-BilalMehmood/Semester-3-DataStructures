@@ -84,7 +84,8 @@ public:
     Node(string name, string path, string type) : name(name), path(path), type(type), leftChild(NULL), rightChild(NULL) {}
 };
 
-class Tree {
+class Tree 
+{
 private:
     Node* root;
 public:
@@ -101,7 +102,7 @@ public:
         Node* parentNode = findParentNode(path);
         if (parentNode == NULL) 
         {
-            cout << "\033[31mInvalid path: \033[34m" << path << "\033[0m" << endl;
+            cout << "\e[1;41mInvalid path: \033[34m" << path << "\033[0m" << endl;
             return;
         }
         if (parentNode->name == "/")
